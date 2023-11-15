@@ -1,0 +1,26 @@
+package solutions
+
+import parseFile
+import parseTestFile
+import workspaces.Workspace
+
+interface Solution<T, R> {
+    val day: String
+    val workspace: Workspace<T, R>
+    fun run(part: String): Answer {
+        // test
+        val testFile = parseTestFile(day, part)
+        val assertion = testFile.first()
+        val testData = parse(testFile.subList(1, testFile.size))
+        val test = workspace.part(part, testData).toString()
+
+        // answer
+        val mainFile = parseFile(day, part)
+        val data = parse(mainFile)
+        val answer = workspace.part(part, data).toString()
+
+        return Answer(day, part, answer, test, assertion)
+    }
+
+    fun parse(data: List<String>): T
+}
