@@ -1,5 +1,4 @@
-import solutions.Day01
-import solutions.Solution
+import solutions.*
 
 fun main(args: Array<String>) {
     args.forEach {
@@ -20,6 +19,7 @@ fun main(args: Array<String>) {
 fun solve(day: String): Solution<*, *> {
     when(day) {
         "01" -> return Day01()
+        "02" -> return Day02()
     }
     throw Exception("Could not find solution with day [$day]!")
 }
