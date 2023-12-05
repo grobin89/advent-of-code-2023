@@ -1,5 +1,5 @@
 package workspaces
 
-interface Workspace<T, R> {
-    fun part(partNumber: String, input: T): R
+interface Workspace<I, O> {
+    fun part(partNumber: String, input: I): O
 }

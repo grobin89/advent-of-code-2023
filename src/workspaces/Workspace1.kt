@@ -1,8 +1,8 @@
 package workspaces
 
-interface Workspace1<T, R> : Workspace<T, R> {
-    fun part1(input: T): R
-    override fun part(partNumber: String, input: T): R {
+interface Workspace1<I, O> : Workspace<I, O> {
+    fun part1(input: I): O
+    override fun part(partNumber: String, input: I): O {
         when(partNumber) {
             "1" -> return part1(input)
         }

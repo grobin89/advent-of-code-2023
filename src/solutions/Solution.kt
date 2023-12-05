@@ -4,9 +4,9 @@ import parseFile
 import parseTestFile
 import workspaces.Workspace
 
-interface Solution<T, R> {
+interface Solution<I, O> {
     val day: String
-    val workspace: Workspace<T, R>
+    val workspace: Workspace<I, O>
     fun run(part: String): Answer {
         // test
         val testFile = parseTestFile(day, part)
@@ -22,5 +22,5 @@ interface Solution<T, R> {
         return Answer(day, part, answer, test, assertion)
     }
 
-    fun parse(data: List<String>): T
+    fun parse(data: List<String>): I
 }
