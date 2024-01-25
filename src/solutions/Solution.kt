@@ -14,6 +14,8 @@ interface Solution<I, O> {
         val testData = parse(testFile.subList(1, testFile.size))
         val test = workspace.part(part, testData).toString()
 
+        if (test != assertion) return Answer(day, part, "", test, assertion)
+
         // answer
         val mainFile = parseFile(day, part)
         val data = parse(mainFile)

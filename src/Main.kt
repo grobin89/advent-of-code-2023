@@ -22,6 +22,7 @@ fun solve(day: String): Solution<*, *> {
         "02" -> return Day02()
         "03" -> return Day03()
         "04" -> return Day04()
+        "05" -> return Day05()
     }
     throw Exception("Could not find solution with day [$day]!")
 }
